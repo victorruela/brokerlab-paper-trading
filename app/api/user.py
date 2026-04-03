@@ -21,7 +21,7 @@ def create_user(user: UserCreate, db: Session = Depends(get_db)):
     db_user = User(
         name=user.name,
         email=user.email,
-        password=user.password,
+        password_hash=user.password,  # ← CORRIGIDO
         cash_balance=10000.0
     )
 
