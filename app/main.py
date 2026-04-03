@@ -15,3 +15,7 @@ def root():
 @app.get("/health")
 def health():
     return {"status": "ok"}
+
+from app.api.user import router as user_router
+
+app.include_router(user_router)
